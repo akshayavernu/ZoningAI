@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Generate a preliminary Toronto zoning summary from a property address."
+  >
+
+  <title>ZoningAI</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="header-content">
+      <a class="brand" href="/">
+        <span class="brand-mark">Z</span>
+
+        <span>
+          <strong>ZoningAI</strong>
+          <small>Toronto Preliminary Zoning Reports</small>
+        </span>
+      </a>
+    </div>
+  </header>
+
+  <main class="page-shell">
+    <section class="hero">
+      <p class="eyebrow">Property Planning Assistant</p>
+
+      <h1>Preliminary Toronto Zoning Information</h1>
+
+      <p class="hero-description">
+        Enter a Toronto property address to retrieve its zoning area,
+        height overlay, lot coverage, applicable exceptions and official
+        by-law sources.
+      </p>
+    </section>
+
+    <section class="search-card">
+      <label for="addressInput">
+        Property Address
+      </label>
+
+      <div class="search-row">
+        <input
+          type="text"
+          id="addressInput"
+          placeholder="Example: 167 Brycemoor Road, Toronto, ON"
+          autocomplete="street-address"
+        >
+
+        <button
+          type="button"
+          id="generateButton"
+          onclick="generateReport()"
+        >
+          Generate Zoning Report
+        </button>
+      </div>
+
+      <p class="input-help">
+        This version currently supports properties located inside the
+        City of Toronto.
+      </p>
+    </section>
+
+    <section
+      id="result"
+      class="result-container"
+      aria-live="polite"
+    ></section>
+  </main>
+
+  <section class="ai-report-section">
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">Preliminary Design Tool</p>
+      <h2>Zoning and Conceptual Site Plan</h2>
+    </div>
+
+    <button id="generateAiReportButton" type="button">
+      Generate AI Report
+    </button>
+  </div>
+
+  <p id="aiReportStatus" class="status-message"></p>
+
+  <div id="sitePlanDrawing" class="site-plan-drawing"></div>
+
+  <div id="aiReportResult" class="ai-report-result"></div>
+</section>
+
+  <footer class="site-footer">
+    <p>
+      ZoningAI provides preliminary information only and does not replace
+      municipal confirmation or professional planning advice.
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
